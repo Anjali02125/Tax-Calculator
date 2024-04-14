@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Fyle Form</title>
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+    <section class="tax-form main">
+        
+            <div class="form-group">
+                <label for="numericInput">Email gross annual income 
+                  <div class="hover-text">? 
+                    <span class="tooltip-text top">Gross annual income is your total salary in a year before any deductions</span>
+                  </div>
+                </label>
+                <div class="input-container tooltip-container">
+                    <input type="text" class="form-control" id="income" name="income" placeholder="Enter gross annual income" oninput="validateInput(this)">
+                    <div class="validation-text" >Please enter numbers only.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gross">Email extra income
+                  <div class="hover-text">? 
+                    <span class="tooltip-text top">Gross annual income is your total salary in a year before any deductions</span>
+                  </div>
+                </label>
+                <div class="input-container tooltip-container">
+                    <input type="text" class="form-control" id="eincome" name="eincome" placeholder="Enter extra income" oninput="validateInput(this)">
+                    <div class="validation-text" >Please enter numbers only.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gross">Email age group
+                  <div class="hover-text">? 
+                    <span class="tooltip-text top">Gross annual income is your total salary in a year before any deductions</span>
+                  </div>
+                </label>
+                <div class="input-container tooltip-container">
+                    <select class="form-select" id="age" name="age" oninput="validateInput(this)">
+                        <option value="1">&lt; 40</option>
+                        <option value="2">≥ 40 &amp; &lt; 60</option>
+                        <option value="3">≥ 60</option>
+                    </select>
+                    <div class="validation-text" id="validation-text">Please select an age group.</div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="gross">Email total applicable deductible
+                  <div class="hover-text">? 
+                    <span class="tooltip-text top">Gross annual income is your total salary in a year before any deductions</span>
+                  </div>
+                </label>
+                <div class="input-container tooltip-container">
+                    <input type="text" class="form-control" id="dincome"  name="dincome" placeholder="Enter gross annual income" oninput="validateInput(this)">
+                    <div class="validation-text" >Please enter numbers only.</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary main-btn" onclick="validateAndCalculate()">Submit</button>
+          
+    </section>
+
+    <section id="tax-result" class="hide">
+        <h1>Your overall income will be</h1>
+        <h2 id="fincome"></h2>
+        <h6 >after deduction</h6>
+        <br>
+        <button class="btn btn-primary" onclick="closeSection()">Close</button>
+    </section>
+
+    <script src="./form.js"></script>
+</body>
+</html>
